@@ -1,0 +1,46 @@
+<div class="bg">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+            </div>
+            <div class="col-md-6">
+                <div class="login-form">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Admin Login</h3>
+                        </div>
+                        <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col">
+                                        <mat-form-field class="form-field" appearance="outline">
+                                            <mat-label>Username</mat-label>
+                                            <input matInput type="text" formControlName="Name" name="username">
+                                            <mat-error *ngIf="addForm.controls['Name'].invalid">
+                                                username is required
+                                            </mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <mat-form-field class="form-field" appearance="outline">
+                                            <mat-label>Password</mat-label>
+                                            <input matInput type="password" formControlName="Password" name="password">
+                                            <mat-error *ngIf="addForm.controls['Password'].invalid">
+                                                password is required
+                                            </mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button mat-raised-button color="primary" class="b-login">Login</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

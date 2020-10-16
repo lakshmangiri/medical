@@ -1,0 +1,28 @@
+.login-form {
+    margin-top: 30px;
+    padding: 40px 70px;
+}
+
+.card-header {
+    margin-top: 10px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.form-field {
+    width: 100%;
+    font-size: 18px;
+    padding: 5px 0px;
+}
+
+.card-footer {
+    padding: 10px;
+    background-color: #fff;
+}
+
+.b-login {
+    width: 100%;
+    font-size: 18px;
+    padding: 10px 20px;
+    margin-top: 15px;
+}

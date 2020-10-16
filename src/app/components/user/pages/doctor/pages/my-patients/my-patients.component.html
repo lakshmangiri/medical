@@ -1,0 +1,44 @@
+<app-doctor-nav></app-doctor-nav>
+
+<div class="bg-color">
+    <div class="container">
+        <div class="my-patients">
+            <div class="row">
+                <div class="col-md-12">
+                    <table id="datatable1" style="width: 100%;" class="table">
+                        <thead>
+                            <tr>
+                                <th>First Name</th>
+                                <th>Last Name</th>
+                                <th>Mobile</th>
+                                <th>Email Id</th>
+                                <th>Register Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr *ngFor="let pat of mypatients">
+
+
+                                <td>{{pat.fname}} </td>
+
+                                <td>{{pat.lname}} </td>
+
+                                <td>{{pat.mobile}}</td>
+
+                                <td>{{pat.email}}</td>
+
+                                <td>{{pat.date}}</td>
+
+                                <td>
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

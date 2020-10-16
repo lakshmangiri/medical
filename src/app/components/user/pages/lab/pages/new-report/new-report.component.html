@@ -1,0 +1,76 @@
+<app-lab-nav></app-lab-nav>
+
+<div class="bg-color">
+    <div class="container">
+        <div class="lab">
+            <div class="row">
+                <div class="col-md-4">
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Add Reports</h3>
+                        </div>
+                        <div class="body">
+                            <form [formGroup]="labReportForm" (ngSubmit)="onReportSubmit();">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col">
+                                            <mat-form-field class="form-field" appearance="outline">
+                                                <mat-label>Patient Name</mat-label>
+                                                <mat-select formControlName="pName" name="pName" id="pName">
+                                                    <mat-option>--choose patient name--</mat-option>
+                                                    <mat-option *ngFor="let pat of reports" [value]="pat.fname">{{pat.fname}}</mat-option>
+                                                </mat-select>
+                                            </mat-form-field>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <mat-form-field class="form-field" appearance="outline">
+                                                <mat-label>Report</mat-label>
+                                                <mat-select formControlName="Report" name="Report">
+                                                    <mat-option>--choose report type--</mat-option>
+                                                    <mat-option value="scan report">Scan Report</mat-option>
+                                                    <mat-option value="medical report">Medical Report</mat-option>
+                                                </mat-select>
+                                                <mat-error *ngIf="labReportForm.controls['Report'].invalid">
+                                                    choose report type
+                                                </mat-error>
+                                            </mat-form-field>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <mat-form-field class="form-field" appearance="outline">
+                                                <mat-label>Description</mat-label>
+                                                <textarea matInput formControlName="Desc" name="Desc"></textarea>
+                                                <mat-error *ngIf="labReportForm.controls['Desc'].invalid">
+                                                    Enter the description
+                                                </mat-error>
+                                            </mat-form-field>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="form-field">
+                                                <input type="file" (change)="onFileSelect($event)" id="Image" formControlName="Image" name="Image">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <button mat-raised-button class="btn-save" color="primary">Save Report</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

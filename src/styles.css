@@ -1,0 +1,40 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.bg {
+    background-image: url('../src/assets/images/bg/bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    background-position: center;
+}
+
+.bg-color {
+    background-color: #9ec8f1;
+    height: 91.5%;
+}
+
+.bg-doctor {
+    background-image: url('../src/assets/images/bg/doctor.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 91.5%;
+    background-position: center;
+}
+
+.bg-lab {
+    background-image: url('../src/assets/images/bg/lab.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 91.5%;
+    background-position: center;
+}

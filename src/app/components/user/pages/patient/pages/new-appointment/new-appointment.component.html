@@ -1,0 +1,72 @@
+<app-patient-nav></app-patient-nav>
+<div class="bg-color">
+    <div class="container">
+        <div class="patient">
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <form [formGroup]="appointmentForm" (ngSubmit)="onAppointmentSubmit();">
+                            <div class="card-header">
+                                <h3>Add Appointment</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col">
+                                            <mat-form-field class="form-field" appearance="outline">
+                                                <mat-label>Patient name</mat-label>
+                                                <mat-select type="text" matInput formControlName="pName" name="pName">
+                                                    <mat-option>--choose your name--</mat-option>
+                                                    <mat-option *ngFor="let pat of appoint1" [value]="pat.fname">{{pat.fname}}</mat-option>
+                                                </mat-select>
+                                                <mat-error *ngIf="appointmentForm.controls['pName'].invalid">
+                                                    Name is required
+                                                </mat-error>
+                                            </mat-form-field>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <mat-form-field class="form-field" appearance="outline">
+                                                <mat-label>Doctor Name</mat-label>
+                                                <mat-select matInput formControlName="dName" name="dName">
+                                                    <mat-option>--choose doctor name--</mat-option>
+                                                    <mat-option *ngFor="let app of appoint" [value]="app.fname">{{app.fname}}</mat-option>
+                                                </mat-select>
+                                                <mat-error *ngIf="appointmentForm.controls['dName'].invalid">
+                                                    Name is required
+                                                </mat-error>
+                                            </mat-form-field>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <mat-form-field class="form-field" appearance="outline">
+                                                <mat-label>Date</mat-label>
+                                                <input matInput [matDatepicker]="picker" formControlName="Date" name="Date" placeholder="Choose a date">
+                                                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                                <mat-datepicker #picker></mat-datepicker>
+                                                <mat-error *ngIf="appointmentForm.controls['Date'].invalid">
+                                                    select a date
+                                                </mat-error>
+                                            </mat-form-field>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <div class="row">
+                                    <div class="col">
+                                        <button mat-raised-button class="btn-app" color="primary">Book Appointment</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+        </div>
+    </div>
+</div>

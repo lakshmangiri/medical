@@ -1,0 +1,73 @@
+<app-admin-nav-bar></app-admin-nav-bar>
+
+<div class="bg-color">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4">
+
+            </div>
+            <div class="col-md-4">
+                <form [formGroup]="doctorForm" (ngSubmit)="onSubmit()">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="title">Doctor form</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col">
+                                        <mat-form-field class="form-field">
+                                            <mat-label>First Name</mat-label>
+                                            <input matInput type="text" formControlName="fName" name="fName" required>
+                                            <mat-error *ngIf="doctorForm.controls['fName'].invalid">
+                                                name is required
+                                            </mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col">
+                                        <mat-form-field class="form-field">
+                                            <mat-label>Last Name</mat-label>
+                                            <input matInput type="text" formControlName="lName" name="lName" required>
+                                            <mat-error *ngIf="doctorForm.controls['lName'].invalid">
+                                                Name is required</mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <mat-form-field class="form-field">
+                                            <mat-label>Email id</mat-label>
+                                            <input matInput type="email" formControlName="Email" name="Email" required>
+                                            <mat-error *ngIf="doctorForm.controls['Email'].invalid">Name is required</mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col">
+                                        <mat-form-field class="form-field">
+                                            <mat-label>Mobile Number</mat-label>
+                                            <input matInput type="tel" formControlName="Mobile" name="Mobile" required>
+                                            <mat-error *ngIf="doctorForm.controls['Mobile'].invalid">Name is required</mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <mat-form-field class="form-field">
+                                            <mat-label>Password</mat-label>
+                                            <input matInput type="password" formControlName="Password" name="Password" required>
+                                            <mat-error *ngIf="doctorForm.controls['Password'].invalid">Name is required</mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button mat-raised-button color="primary" [disabled]="!doctorForm.valid" class="btn-Submit">Add Doctor</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-4">
+            </div>
+        </div>
+    </div>
+</div>

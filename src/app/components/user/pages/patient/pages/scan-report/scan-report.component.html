@@ -1,0 +1,40 @@
+<app-patient-nav></app-patient-nav>
+
+<div class="bg-color">
+    <div class="container">
+        <h3 class="header">Scan Reports</h3>
+        <div class="row">
+            <table id="datatable1" class="table">
+                <thead>
+                    <tr>
+                        <th>Reports Type</th>
+                        <th>Description</th>
+                        <!-- <td>Image</td> -->
+                        <th>Date</th>
+                        <td>Actions</td>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr *ngFor="let sca of scan let i=index; let isEven= even" [ngStyle]="{'background' : (isEven) ? '#8080800d' : 'white' }">
+
+
+                        <td>{{sca.type | titlecase}} </td>
+
+                        <td>{{sca.desc | titlecase}} </td>
+
+                        <!-- <td><img style="height:50px;width:100px;" src="assets/reports/{{sca.image}}" /> </td> -->
+
+                        <td>{{sca.date | date}}</td>
+
+                        <td>
+                            <button mat-flat-button color="primary">Download</button>
+                        </td>
+
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

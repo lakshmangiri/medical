@@ -1,0 +1,40 @@
+<app-doctor-nav></app-doctor-nav>
+
+<div class="bg-color">
+    <div class="container">
+        <div class="appointments">
+            <div class="row">
+                <table id="datatable1" style="width: 100%;" class="table">
+                    <thead>
+                        <tr>
+                            <th>Doctor Name</th>
+                            <th>Patient Name</th>
+                            <th>Appointnment Date</th>
+                            <th>Register Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr *ngFor="let appoint of myappoints">
+
+
+                            <td>{{appoint.doc}} </td>
+
+                            <td>{{appoint.pat}} </td>
+
+                            <td>{{appoint.appdate}}</td>
+
+                            <td>{{appoint.date}}</td>
+
+                            <td>
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>

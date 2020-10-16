@@ -1,0 +1,61 @@
+<div class="bg">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+            </div>
+            <div class="col-md-6">
+                <div class="login-form">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3>Login</h3>
+                        </div>
+                        <form [formGroup]="userLoginForm" (ngSubmit)="onSubmit()">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col">
+                                        <mat-form-field class="form-field" appearance="outline">
+                                            <mat-label>Username</mat-label>
+                                            <input matInput type="email" formControlName="Email" name="Email" required>
+                                            <mat-error *ngIf="userLoginForm.controls['Email'].invalid">
+                                                Email id is required
+                                            </mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <mat-form-field class="form-field" appearance="outline">
+                                            <mat-label>Password</mat-label>
+                                            <input matInput type="password" formControlName="Password" name="password" required>
+                                            <mat-error *ngIf="userLoginForm.controls['Password'].invalid">
+                                                password is required
+                                            </mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <mat-form-field class="form-field" appearance="outline">
+                                            <mat-label>Category</mat-label>
+                                            <mat-select formControlName="Type" name="Type">
+                                                <mat-option value="0">Doctor</mat-option>
+                                                <mat-option value="1">Patient</mat-option>
+                                                <mat-option value="2">Lab Assistant</mat-option>
+                                            </mat-select>
+                                            <mat-error *ngIf="userLoginForm.controls['Type'].invalid">
+                                                select a category
+                                            </mat-error>
+                                        </mat-form-field>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button mat-raised-button color="primary" class="b-login">Login</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
